@@ -27,7 +27,14 @@ foreach ($i in $SQLInstances)
 {
     #Задаем переменные для подключение к MSSQL. $uid и $pwd нужны для проверки подлинности windows / We define the variables for connecting to MS SQL. $uid и $pwd need to authenticate windows
     #This will append the Instane name to Hostname.
-    $SQLServer = $(hostname.exe) + "\$i"
+    #$SQLServer = $(hostname.exe) + "\$i"
+    if ( $i -ieq "MSSQLSERVER") {
+        $SQLServer = $(hostname.exe)
+    } 
+    else
+    {
+        $SQLServer = $(hostname.exe) + "\$i"
+    }  
     #$uid = "Login" 
     #$pwd = "Password"
     
