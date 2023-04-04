@@ -21,7 +21,6 @@ $jsonlist = "{`n"
 $jsonlist += " `"data`":[`n"
 
 $idxI = 1
-#$SQLService = "MSSQLSERVER"
 #Loop through each Instance and create a database connection.
 foreach ($i in $SQLInstances)
 {
@@ -73,7 +72,6 @@ foreach ($i in $SQLInstances)
     foreach ($name in $basename)
     {       
 #       $jsonlist+= "{ `"{#DBNAME}`" : `"" + $name.name + "`", `"{#SQLINSTANCE}`" : `"MSSQL$" + $i + "`" }" | convertto-encoding "cp866" "utf-8"
-# 
        $jsonlist+= "{`"{#DBNAME}`" : `"" + $name.name + "`", `"{#SQLSERVICE}`" : `"" + $prefix + $i + "`", `"{#SQLINSTANCE}`" : `""+ $prefix + $i + "`" }" | convertto-encoding "cp866" "utf-8" 
        #If not the last line, add comma.
        #Had to add extra loop per instance so that it doesn't omit after each Instance block.
