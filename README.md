@@ -1,3 +1,4 @@
+a
 # Update - 2019-05-28
 Moved to another company with no Zabbix and/or MS Sql in its environment, hence archiving the repo.
 
